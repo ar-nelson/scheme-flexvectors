@@ -218,4 +218,5 @@
              (vt (let lp ((v (vec to)))
                    (if (< lt (vector-length v)) v (lp (grow! to))))))
         (vector-copy! vt at vf start end)
-        (set-flexvector-length! to (+ (flexvector-length to) (- end start)))))))
+        (set-flexvector-length! to
+          (max (flexvector-length to) (+ at (- end start))))))))

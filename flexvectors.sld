@@ -18,11 +18,12 @@
           flexvector-set! flexvector-swap!
           flexvector-fill! flexvector-reverse!
           flexvector-copy! flexvector-reverse-copy!
-          flexvector-unfold! flexvector-unfold-right!
+          flexvector-append!
 
           ; Iteration
           flexvector-fold flexvector-fold-right
           flexvector-map flexvector-map! flexvector-map/index flexvector-map/index!
+          flexvector-append-map flexvector-append-map/index
           flexvector-filter flexvector-filter! flexvector-filter/index flexvector-filter/index!
           flexvector-for-each flexvector-for-each/index
           flexvector-count flexvector-cumulate

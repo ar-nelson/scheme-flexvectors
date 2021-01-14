@@ -172,6 +172,20 @@
   (assume (flexvector? fv))
   (apply flexvector-map! proc (flexvector-copy fv) fvs))
 
+(define (flexvector-append-map/index proc fv . fvs)
+  (define out (flexvector))
+  (flexvector-for-each
+    (lambda (x) (flexvector-append! out x))
+    (apply flexvector-map/index proc fv fvs))
+  out)
+
+(define (flexvector-append-map proc fv . fvs)
+  (define out (flexvector))
+  (flexvector-for-each
+    (lambda (x) (flexvector-append! out x))
+    (apply flexvector-map proc fv fvs))
+  out)
+
 (define flexvector-filter!
   (case-lambda
     ((pred? fv)
